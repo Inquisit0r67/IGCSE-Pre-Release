@@ -124,9 +124,10 @@ namespace GCSE_pre_release
                         WriteLine("\nAmount sold of each product:");
                         //Once again Linq saves the day with .Zip, this just subtracts staring stock by current to get amount sold as a new array
                         int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray(); 
-                        for (int i = 0; i < Amount_sold.Length; i++) //Prints out the array amount sold
+                        for (int i = 0; i < Amount_sold.Length; i++) //Iterrates through array Amount_sold
                         {
-                            WriteLine(Components[i] + ": " + Amount_sold[i]);
+                            //Prints out the array amount with components in a nice table format
+                            WriteLine(Components[i] + ": " + Amount_sold[i]); 
                         }
                         ReadKey();
                         EOD = true;
