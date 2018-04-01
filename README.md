@@ -5,4 +5,5 @@ My code does use features we have not studied in our course, but an assesment sp
 
 So infact using different solutions using more programming techniques is sort of encouraged as it will increase your understanding of our pre release material in preperation for our exam on it.
 In short if your solution ticks all the boxes in the pre release requirement, it should be given credit.
+
    "...As long as a candidate’s interpretation is supported by a logical approach that is appropriate to the task, the work is rewarded."
