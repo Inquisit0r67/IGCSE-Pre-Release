@@ -1,6 +1,6 @@
 ﻿//This program is courtesy of S.Jani 11W [pls no steal :(]
 using System;
-using System.Linq; //This may not be acceptable in an exam as Linq is only used in .net languages
+using System.Linq; //This may not be acceptable in an exam as Linq is only used in .net languages (Read README.md for more info)
 using System.Collections.Generic;
 using static System.Console;
 namespace GCSE_pre_release
