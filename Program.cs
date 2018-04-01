@@ -38,7 +38,7 @@ namespace GCSE_pre_release
                     WriteLine("\n" + "Choose " + Parts[j]);
                     //Temp is the temporary array used to store the specific range of items selcted
                     //It uses the array Skip and Range_size to get the specific range of items from Components
-                    var Temp = Components.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //Using Linq may not be accepted in exam (.Skip and .Take)
+                    var Temp = Components.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //.Skip and .Take are fairly simple and explained in README.md
                     var Temp_prices = Prices.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //Temp_prices stores the prices for items chosen
                     for (int i = 0; i < Temp.Length; i++)
                     {
@@ -145,6 +145,7 @@ namespace GCSE_pre_release
         }
     }
 }
+//Read my README.md for more info on my use of Linq
 
 
     
