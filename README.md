@@ -11,6 +11,6 @@ So infact using different solutions using more programming techniques is sort of
 
 > *"...As long as a candidate’s interpretation is supported by a logical approach that is appropriate to the task, the work is              rewarded."*
   
-In short if your solution ticks all the boxes in the pre release requirement, it should be given credit. I reccomend you attempy to find a solution using multiple methods, you should probably also do one that only uses the stuff we have learnt throughout the course to be on the safe side when you take the exam in the summer.
+In short if your solution ticks all the boxes in the pre release requirement, it should be given credit. I reccomend you attempt to find a solution using multiple methods, you should probably also do one that only uses the stuff we have learnt throughout the course to be on the safe side when you take the exam in the summer.
   
 Good Luck:)
