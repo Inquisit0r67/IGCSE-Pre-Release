@@ -1,4 +1,4 @@
-# Some Infromation
+# Some Information
 
 The exam board have saide that they will be looking mostly at the logic of the code in our exams and that sytanx isnt scrutinised as much.
 My code does use features we have not studied in our course, such as '**Using System.Linq;**'. This with what we had been told before would have been unacceptable. However an assesment specialist has said: 
