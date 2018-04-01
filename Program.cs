@@ -122,7 +122,7 @@ namespace GCSE_pre_release
                         WriteLine("\nHere are all the details of orders made: ");
                         Customer_details.ForEach(WriteLine); //Prints out the whole list with order details
                         WriteLine("\nAmount sold of each product:");
-                        //Once again Linq saves the day with .Zip, this just subtracts staring stock by current to get amount sold as a new array
+                        //Once again Linq saves the day with .Zip. (explained in README.md)
                         int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray(); 
                         for (int i = 0; i < Amount_sold.Length; i++) //Iterrates through array Amount_sold
                         {
