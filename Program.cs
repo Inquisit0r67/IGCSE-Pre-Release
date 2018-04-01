@@ -8,12 +8,8 @@ namespace GCSE_pre_release
     class Program
     {
         //Initialising arrays for parts and components
-        static string[] Parts =
-        {
-            "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports"
-        };
-        static string[] Components = {"p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower","2 ports", "4 ports"
-        };
+        static string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" };
+        static string[] Components = { "p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower","2 ports", "4 ports" };
         //Self explanitory, these are the prices for the Components
         static int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 };
         //Skip will be used to get how many items to skip in the array components to get the items we want.
