@@ -27,13 +27,13 @@ However Microsoft from their own words:
 Its more universal and more readable for programmers that don't know Xquery and SQL. Developers can create queries in their code without having to learn another language.
 
 #### Linq Stuff I Have Used
-Lambda Function '**=>**': This isn't specific to Linq only but it is used alot in it. It allows you to create functions that can be passed as arguments.
+Lambda Function (**=>**) : This isn't specific to Linq only but it is used alot in it. It allows you to create functions that can be passed as arguments.
 
-'**.Zip**': This just applies a function to the elements of two sequences (list or array), it then produces the result.
+'**.Zip**' : This just applies a function to the elements of two sequences (list or array), it then produces the result.
 
-'**.Take**': This literally takes a range from a sequence.
+'**.Take**' : This literally takes a range from a sequence.
 
-'**.Skip**': This skips a defined amount of elements in a sequence.
+'**.Skip**' : This skips a defined amount of elements in a sequence.
 
 An example from my code:
 >'**int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray();**'
