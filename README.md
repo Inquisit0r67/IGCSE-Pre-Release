@@ -37,6 +37,7 @@ Lambda Function '**=>**': This isnt specific to Linq only but it is used alot in
 
 An example from my code:
 >'**int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray();**' 
+
 This creates an array Amount_sold, the two sequnces involved are Stock and RUnning_Stock. It makes them into variables a and b then applies the function of subtracting the two then converts it to an array and stores it as Amount_sold.
 
 Hopefully this gives anyone who doesnt know what Linq is some understanding of what it is and what I used.
