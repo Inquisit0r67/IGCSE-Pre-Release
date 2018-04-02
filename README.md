@@ -14,6 +14,12 @@ So in fact using different solutions using more programming techniques is sort o
 In short if your solution ticks all the boxes in the pre release requirement, it should be given credit. I recommend you attempt to find a solution using multiple methods, you should probably also do one that only uses the stuff we have learnt throughout the course to be on the safe side when you take the exam in the summer.
 
 Good Luck:)
+### Screenshots From My Code:
+![Alt text](/Screenshots/Capture.PNG)
+
+![Alt text](/Screenshots/Capture1.PNG)
+
+![Alt text](/Screenshots/Capture2.PNG)
 
 ### Extra Info About Linq
 Linq is a language integrated query component for all .NET languages (yes VB has this). It basically adds different querying capabilities. As programming languages become more Object Orientated Linq allows easier accessing and integration of stuff that does not use Object Orientated technology.
