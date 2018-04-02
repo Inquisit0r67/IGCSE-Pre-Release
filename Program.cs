@@ -27,6 +27,7 @@ namespace GCSE_pre_release
         static List<string> Customer_details = new List<string>(); //Stores all details of order per customer
 
         static void Main(){
+            Title = "Tesco Every Little Helps"
             //Task 1
             var EOD = false; //End of day, program for customer choice will loop till "end of day = True"
             while (EOD == false){
