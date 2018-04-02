@@ -4,7 +4,7 @@ using System.Linq; //This may not be acceptable in an exam as Linq is only used 
 using System.Collections.Generic;
 using static System.Console;
 namespace GCSE_pre_release
-{ 
+{
     class Program
     {
         //Initialising arrays for parts and components
@@ -14,7 +14,7 @@ namespace GCSE_pre_release
         static int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 };
         //Skip will be used to get how many items to skip in the array components to get the items we want.
         //Range_size will be used to select the size of the range of items from the array Components, it will start at the item reached after skip
-        static int[] Range_size = { 3, 2, 2, 2, 2, 2 };         
+        static int[] Range_size = { 3, 2, 2, 2, 2, 2 };
         static int[] Skip = { 0, 3, 5, 7, 9, 11};
         //Initialising Stock and an array for amount ordered of each part
         static int[] Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
@@ -25,30 +25,25 @@ namespace GCSE_pre_release
         static int Amount_Orders_made = 0; //Saves number of orders made
         static string date = DateTime.Today.ToString("dd/MM/yy"); //Gets the current date of the computer
         static List<string> Customer_details = new List<string>(); //Stores all details of order per customer
-  
-        static void Main()
-        {  
+
+        static void Main(){
             //Task 1
             var EOD = false; //End of day, program for customer choice will loop till "end of day = True"
-            while (EOD == false)
-            {
+            while (EOD == false){
                 //Here the program will iterate through the array parts and print out each item
-                for (int j = 0; j < Parts.Length; j++)
-                {
+                for (int j = 0; j < Parts.Length; j++){
                     WriteLine("\n" + "Choose " + Parts[j]);
                     //Temp is the temporary array used to store the specific range of items selcted
                     //It uses the array Skip and Range_size to get the specific range of items from Components
                     var Temp = Components.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //.Skip and .Take are fairly simple and explained in README.md
                     var Temp_prices = Prices.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //Temp_prices stores the prices for items chosen
-                    for (int i = 0; i < Temp.Length; i++)
-                    {
+                    for (int i = 0; i < Temp.Length; i++){
                         WriteLine("{0}." + Temp[i], i + 1);
                     }
                     var check = true;
                     while (check == true) //Will repeat the specific try if an exception is thrown
                     {
-                        try
-                        {
+                        try{
                             var input = Convert.ToInt32(ReadLine()) - 1; //Uses the input and converts it to an integer and then subtracts one to get the correct place in the array
                             Customer_choice.Add(Temp[input]);
                             Order_price.Add(Temp_prices[input]); //Appends the chosen items and price to seperate list, did not use 2d arrays cause exame board are unclear on what they accept
@@ -66,7 +61,7 @@ namespace GCSE_pre_release
                 WriteLine("Your order summary:" + "\n");
                 Customer_choice.Zip(Order_price, (a, b) => a + " : $" + b).ToList().ForEach(x => WriteLine(x)); //Another linq function .Zip allows to combine two lists for viewing (aethetics only)
                 WriteLine();
-                WriteLine("Total cost of your order is $" + Order_price.Sum() * 1.2 + " including 20% VAT\n"); //Gets sum of Order_price and then adds 20% as per pre release requirements          
+                WriteLine("Total cost of your order is $" + Order_price.Sum() * 1.2 + " including 20% VAT\n"); //Gets sum of Order_price and then adds 20% as per pre release requirements
 
                 //Task 2
                 var In_Stock = true;
@@ -79,10 +74,9 @@ namespace GCSE_pre_release
                     };
                 }
                 //Asks user to confirm the order they have selected
-                WriteLine("\nDo you want to make your order? (y/n)"); 
+                WriteLine("\nDo you want to make your order? (y/n)");
                 var check1 = true;
-                while (check1 == true)
-                {
+                while (check1 == true){
                     var input1 = ReadLine();
                     if (input1 == "y" & In_Stock == true)
                     { //If "y" is selected and items are in stock the order will be saved
@@ -97,7 +91,7 @@ namespace GCSE_pre_release
                         WriteLine("\nOrder made " + date + ". Enter customer details...");
                         var Customer_Details_input = ReadLine();
                         //Adds all details to list
-                        Customer_details.Add("Customer: **" + Customer_Details_input + "** made order on " + date + ". Order Num is: " + Order_Num_Gen + ". The value of the order is $" + Order_price.Sum() * 1.2);                                            
+                        Customer_details.Add("Customer: **" + Customer_Details_input + "** made order on " + date + ". Order Num is: " + Order_Num_Gen + ". The value of the order is $" + Order_price.Sum() * 1.2);
                         Amount_Orders_made++; //Adds an order to orders made
                         break;
                     }
@@ -111,10 +105,9 @@ namespace GCSE_pre_release
                 }
 
                 //Task 3
-                WriteLine("\nIs it endo of day? (y/n)");               
+                WriteLine("\nIs it endo of day? (y/n)");
                 var Check = true;
-                while (Check == true)
-                {
+                while (Check == true){
                     var Input = ReadLine();
                     if (Input == "y") //Asks user to check if its end of day
                     { //If its end of day the program prints out the number of orders made and all the unique order numbers
@@ -123,11 +116,11 @@ namespace GCSE_pre_release
                         Customer_details.ForEach(WriteLine); //Prints out the whole list with order details
                         WriteLine("\nAmount sold of each product:");
                         //Once again Linq saves the day with .Zip. (explained in README.md)
-                        int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray(); 
+                        int[] Amount_sold = Stock.Zip(Running_Stock, (a, b) => a - b).ToArray();
                         for (int i = 0; i < Amount_sold.Length; i++) //Iterrates through array Amount_sold
                         {
                             //Prints out the array amount with components in a nice table format
-                            WriteLine(Components[i] + ": " + Amount_sold[i]); 
+                            WriteLine(Components[i] + ": " + Amount_sold[i]);
                         }
                         ReadKey();
                         EOD = true;
@@ -146,7 +139,3 @@ namespace GCSE_pre_release
     }
 }
 //Read my README.md for more info on my use of Linq
-
-
-    
-
