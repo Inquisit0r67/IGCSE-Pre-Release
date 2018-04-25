@@ -3,21 +3,14 @@ using System;
 using System.Linq; //This may not be acceptable in an exam as Linq is only used in .net languages (Read README.md for more info)
 using System.Collections.Generic;
 using static System.Console;
-namespace GCSE_pre_release
-{
-    class Program
-    {
-        //Initialising arrays for parts and components
-        static string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" };
+namespace GCSE_pre_release{
+    class Program{
+        static string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" }; //Initialising arrays for parts and components
         static string[] Components = { "p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower","2 ports", "4 ports" };
-        //Self explanitory, these are the prices for the Components
-        static int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 };
-        //Skip will be used to get how many items to skip in the array components to get the items we want.
-        //Range_size will be used to select the size of the range of items from the array Components, it will start at the item reached after skip
-        static int[] Range_size = { 3, 2, 2, 2, 2, 2 };
-        static int[] Skip = { 0, 3, 5, 7, 9, 11};
-        //Initialising Stock and an array for amount ordered of each part
-        static int[] Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+        static int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 }; //Self explanitory, these are the prices for the Components
+        static int[] Range_size = { 3, 2, 2, 2, 2, 2 }; //Range_size will be used to select the size of the range of items from the array Components, it will start at the item reached after skip
+        static int[] Skip = { 0, 3, 5, 7, 9, 11}; //Skip will be used to get how many items to skip in the array components to get the items we want.
+        static int[] Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }; //Initialising Stock and an array for amount ordered of each part
         static int[] Running_Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, };
         static List<string> Customer_choice = new List<string>(); //A list for saving customer choice
         static List<int> Order_price = new List<int>(); //List for saving the order price
