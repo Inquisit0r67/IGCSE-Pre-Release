@@ -4,20 +4,20 @@ using System.Collections.Generic;
 using static System.Console;
 namespace GCSE_pre_release{
     class Program{
-        static string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" }; //Initialising arrays for parts and components
-        static string[] Components = { "p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower", "2 ports", "4 ports" };
-        static int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 }; //Self explanitory, these are the prices for the Components
-        static int[] Range_size = { 3, 2, 2, 2, 2, 2 }; //Range_size will be used to select the size of the range of items from the array Components, it will start at the item reached after skip
-        static int[] Skip = { 0, 3, 5, 7, 9, 11 }; //Skip will be used to get how many items to skip in the array components to get the items we want.
-        static int[] Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }; //Initialising Stock and an array for amount ordered of each part
-        static int[] Running_Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, };
-        static List<string> Customer_choice = new List<string>(); //A list for saving customer choice
-        static List<int> Order_price = new List<int>(); //List for saving the order price
-        static int Order_Num_Gen = 0; //Used for creating unique order number
-        static int Amount_Orders_made = 0; //Saves number of orders made
-        static string date = DateTime.Today.ToString("dd/MM/yy"); //Gets the current date of the computer
-        static List<string> Customer_details = new List<string>(); //Stores all details of order per customer
         static void Main(){
+            string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" }; //Initialising arrays for parts and components
+            string[] Components = { "p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower", "2 ports", "4 ports" };
+            int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 }; //Self explanitory, these are the prices for the Components
+            int[] Range_size = { 3, 2, 2, 2, 2, 2 }; //Range_size will be used to select the size of the range of items from the array Components, it will start at the item reached after skip
+            int[] Skip = { 0, 3, 5, 7, 9, 11 }; //Skip will be used to get how many items to skip in the array components to get the items we want.
+            int[] Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }; //Initialising Stock and an array for amount ordered of each part
+            int[] Running_Stock = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, };
+            List<string> Customer_choice = new List<string>(); //A list for saving customer choice
+            List<int> Order_price = new List<int>(); //List for saving the order price
+            int Order_Num_Gen = 0; //Used for creating unique order number
+            int Amount_Orders_made = 0; //Saves number of orders made
+            string date = DateTime.Today.ToString("dd/MM/yy"); //Gets the current date of the computer
+            List<string> Customer_details = new List<string>(); //Stores all details of order per customer
             Title = "Tesco Every Little Helps"; //Task 1
             var EOD = false; //End of day, program for customer choice will loop till "end of day = True"
             while (EOD == false){                
