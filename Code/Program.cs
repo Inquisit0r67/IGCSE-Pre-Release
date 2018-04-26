@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using static System.Console;
 namespace GCSE_pre_release{
     class Program{
-        static void Main(){
+        static void Main() {
             string[] Parts = { "Proccesor", "RAM", "Storage", "Screen", "Case", "USB ports" }; //Initialising arrays for parts and components
             string[] Components = { "p3", "p5", "p7", "16GB", "32GB", "1TB", "2TB", "19\"", "23\"", "Mini tower", "Midi tower", "2 ports", "4 ports" };
             int[] Prices = { 100, 120, 200, 75, 150, 50, 100, 65, 120, 40, 70, 10, 20 }; //Self explanitory, these are the prices for the Components
@@ -20,22 +20,22 @@ namespace GCSE_pre_release{
             List<string> Customer_details = new List<string>(); //Stores all details of order per customer
             Title = "Tesco Every Little Helps"; //Task 1
             var EOD = false; //End of day, program for customer choice will loop till "end of day = True"
-            while (EOD == false){                
-                for (int j = 0; j < Parts.Length; j++){ //Here the program will iterate through the array parts and print out each item
+            while (EOD == false){
+                for (int j = 0; j < Parts.Length; j++) { //Here the program will iterate through the array parts and print out each item
                     WriteLine("\n" + "Choose " + Parts[j]); //Temp is the temporary array used to store the specific range of items selcted. It uses the array Skip and Range_size to get the specific range of items from Components
                     var Temp = Components.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //.Skip and .Take are fairly simple and explained in README.md
                     var Temp_prices = Prices.Skip(Skip[j]).Take(Range_size[j]).ToArray(); //Temp_prices stores the prices for items chosen
-                    for (int i = 0; i < Temp.Length; i++){
+                    for (int i = 0; i < Temp.Length; i++) {
                         WriteLine("{0}." + Temp[i], i + 1);}
                     var check = true;
-                    while (check == true){ //Will repeat the specific try if an exception is thrown
+                    while (check == true) { //Will repeat the specific try if an exception is thrown
                         try{
                             var input = Convert.ToInt32(ReadLine()) - 1; //Uses the input and converts it to an integer and then subtracts one to get the correct place in the array
                             Customer_choice.Add(Temp[input]);
                             Order_price.Add(Temp_prices[input]); //Appends the chosen items and price to seperate list, did not use 2d arrays cause exame board are unclear on what they accept
                             check = false;
                             break;}
-                        catch (Exception){ //Program will "catch" any exception
+                        catch (Exception) { //Program will "catch" any exception
                             WriteLine("An invalid input was detected, please try again");}}};
                 WriteLine("\n" + "\n");
                 WriteLine("---------------------------------------------------------------------------------------------");
@@ -45,21 +45,20 @@ namespace GCSE_pre_release{
                 WriteLine("Total cost of your order is $" + Order_price.Sum() * 1.2 + " including 20% VAT\n"); //Gets sum of Order_price and then adds 20% as per pre release requirements
                 var In_Stock = true; //Task 2
                 for (int k = 0; k < Running_Stock.Length; k++){ //Iterrates through stock
-                    if (Running_Stock[k] < 1 & Customer_choice.Contains(Components[k])){ //Check if there is any item in stock is less than one (so empty) and if it is contained within the order
+                    if (Running_Stock[k] < 1 & Customer_choice.Contains(Components[k])) { //Check if there is any item in stock is less than one (so empty) and if it is contained within the order
                         WriteLine(Components[k] + " is out of stock and order will not be completed");
                         In_Stock = false;};} //Flags as out of stock if an item if out of stock, this will prevent an order being placed
                 WriteLine("\nDo you want to make your order? (y/n)");
                 var check1 = true;
-                while (check1 == true){
+                while (check1 == true) {
                     var input1 = ReadLine();
-                    if (input1 == "y" & In_Stock == true){ //If "y" is selected and items are in stock the order will be saved
-                        for (int o = 0; o < Components.Length; o++){ //Iterates through components
-                            if (Customer_choice.Contains(Components[o])){ //if item is on the order list
+                    if (input1 == "y" & In_Stock == true) { //If "y" is selected and items are in stock the order will be saved
+                        for (int o = 0; o < Components.Length; o++) { //Iterates through components
+                            if (Customer_choice.Contains(Components[o])) { //if item is on the order list
                                 Running_Stock[o] -= 1;}} //Take away stock from that component
                         Order_Num_Gen++;
                         WriteLine("\nOrder made " + date + ". Enter customer details...");
-                        var Customer_Details_input = ReadLine();
-                        //Adds all details to list
+                        var Customer_Details_input = ReadLine(); //Adds all details to list
                         Customer_details.Add("Customer: **" + Customer_Details_input + "** made order on " + date + ". Order Num is: " + Order_Num_Gen + ". The value of the order is $" + Order_price.Sum() * 1.2);
                         Amount_Orders_made++; //Adds an order to orders made
                         break;}
@@ -69,9 +68,9 @@ namespace GCSE_pre_release{
                         break;}}
                 WriteLine("\nIs it endo of day? (y/n)"); //Task 3
                 var Check = true;
-                while (Check == true){
+                while (Check == true) {
                     var Input = ReadLine(); //Asks user to check if its end of day
-                    if (Input == "y") { //If its end of day the program prints out the number of orders made and all the unique order numbers
+                    if (Input == "y"){ //If its end of day the program prints out the number of orders made and all the unique order numbers
                         WriteLine("\nThe amount of orders made is: " + Amount_Orders_made);
                         WriteLine("\nHere are all the details of orders made: ");
                         Customer_details.ForEach(WriteLine); //Prints out the whole list with order details
@@ -82,7 +81,7 @@ namespace GCSE_pre_release{
                         ReadKey();
                         EOD = true;
                         break;}
-                    else if (Input == "n"){ //If value entered is "n" it will not change the EOD Bool and so program will loop
+                    else if (Input == "n") { //If value entered is "n" it will not change the EOD Bool and so program will loop
                         Check = false;
                         break;}}
                 Customer_choice.Clear(); // Refreshes the lists so they can be re-used for the next loop/customer
